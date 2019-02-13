@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # We need to set the base url locally when not deployed on binder.
-export PRE=${JUPYTERHUB_USER:+user/}
-export BASEURL="${PRE}${JUPYTERHUB_USER:-/}"
+export BASEURL="${JUPYTERHUB_USER:+user/}${JUPYTERHUB_USER:-/}"
 
 # Import the workspace into JupyterLab
 jupyter lab workspaces import binder/workspace.json \
